@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07596e">
+<meta name="description" content="Co wiesz o tutoringu WOiG UG? 10 pytań: FAKT czy MIT. Interaktywna gra dla studentów.">
+<title>FAKT czy MIT? | Tutoring WOiG UG</title>
+<style>
+:root{--ink:#123b4c;--navy:#07596e;--sea:#087c91;--teal:#078c8d;--light:#eaf8f5;--cream:#fff9ef;--border:#cce0e1;--muted:#52717a;--mint:#ddf4ea;--warn:#fff1d9;--shadow:0 18px 52px rgba(18,82,92,.13)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--ink);background:radial-gradient(circle at 12% 4%,#c6ebf2 0,transparent 37%),linear-gradient(155deg,#edfafa,#fffaf0 67%,#d9f0ed);font:16px/1.52 system-ui,-apple-system,"Segoe UI",sans-serif}
+body:before{content:"";position:fixed;top:-12vw;right:-10vw;width:43vw;height:43vw;border:4vw solid rgba(36,156,163,.05);border-radius:50%;pointer-events:none}.wrap{position:relative;width:min(100%,820px);margin:auto;padding:32px 16px 55px}
+header{text-align:center;margin:0 auto 28px}.eyebrow{font-size:11px;font-weight:900;letter-spacing:.17em;text-transform:uppercase;color:#177588}h1{font-size:clamp(39px,8vw,69px);font-weight:950;line-height:1.05;letter-spacing:-.055em;color:#07596e;margin:15px 0 10px}h1 .or{color:#d49c4f;font-size:.6em;letter-spacing:-.04em}.lead{margin:0 auto;max-width:650px;font-size:clamp(15px,3vw,19px)}.pills{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:19px 0 0}.pills span{font-size:12px;font-weight:800;color:#145e68;border:1px solid #c4e6e2;background:#ffffffbd;border-radius:50px;padding:6px 12px}
+.wave{height:10px;width:min(275px,58%);margin:19px auto 0;border-radius:100%;border-top:5px solid #14a7a7;transform:rotate(-2deg)}
+.panel{background:#fffefc;border:1px solid #fff;border-radius:27px;box-shadow:var(--shadow);padding:clamp(19px,4.5vw,36px);min-height:365px}.topline{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 12px}.topline span:first-child{font-size:12px;font-weight:850;letter-spacing:.12em;color:#008b91;text-transform:uppercase}.count{font-size:13px;color:var(--muted);font-weight:800;white-space:nowrap}.progress{height:10px;background:#e5efee;overflow:hidden;border-radius:50px;margin-bottom:25px}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#27babb,#0b7a90);border-radius:50px;transition:width .3s ease}
+.statement-index{margin:0 0 7px;font-size:13px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:#769399}.statement{font-size:clamp(23px,4.7vw,33px);line-height:1.26;letter-spacing:-.024em;font-weight:850;margin:0 0 26px;min-height:92px}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.choice{border:2px solid #d2e7e4;border-radius:18px;background:#f9fefc;color:#07596e;padding:19px 12px;min-height:132px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:7px;cursor:pointer;font:inherit;transition:border-color .15s,background .15s,transform .15s}.choice:hover,.choice:focus-visible{border-color:#0f999c;background:#eefaf8;transform:translateY(-2px)}.choice .symbol{font-size:37px;line-height:1}.choice .word{font-size:22px;line-height:1.05;font-weight:950;letter-spacing:.08em}.choice .hint{font-size:12px;color:#537f83}.choice[disabled]{cursor:default}.choice[disabled]:hover{transform:none}.choice.is-correct{border-color:#2aa378;background:#e5f8eb;color:#185d43}.choice.is-wrong{border-color:#e7a478;background:#fff0e5;color:#83502d}.choice.is-muted{opacity:.52}
+.feedback{border-radius:16px;padding:17px 19px;margin:20px 0 0;border:1px solid #cee9e1;background:#effaf6}.feedback.wrong{background:#fff6e8;border-color:#f4dcba}.fb-head{display:flex;align-items:center;gap:9px;font-weight:900;font-size:17px}.fb-head .big-icon{font-size:25px}.feedback p{margin:7px 0 0;font-size:15px;line-height:1.55}.actions{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-top:20px;flex-wrap:wrap}.btn{border-radius:12px;padding:12px 20px;border:0;cursor:pointer;font:inherit;font-weight:850;min-height:48px}.primary{background:#08788d;color:white}.primary:hover,.primary:focus-visible{background:#055c6d}.secondary{background:#e9f6f3;color:#075f70}.secondary:hover,.secondary:focus-visible{background:#d4eee9}.back{color:#436e77;border:0;background:transparent;font:inherit;font-weight:700;padding:12px 4px;cursor:pointer}.back:disabled{opacity:.35;cursor:default}.hidden{display:none!important}
+.result-hero{text-align:center}.trophy{font-size:58px}.result-hero h2{font-size:clamp(29px,5vw,39px);line-height:1.15;margin:9px 0}.score{font-size:clamp(59px,12vw,91px);font-weight:950;line-height:1;letter-spacing:-.08em;color:#087f8e;margin:10px 0 9px}.score small{font-size:20px;letter-spacing:normal;color:#526f76;margin-left:8px}.result-text{max-width:540px;margin:0 auto 20px;font-size:17px}.roundup{margin-top:26px;border-top:1px solid #dce9e7;padding-top:19px}.roundup h3{font-size:22px;margin:0 0 13px}.review{display:grid;gap:9px}.review-item{border:1px solid #d9e7e4;background:#f9fcfa;padding:13px 15px;border-radius:12px}.review-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;font-size:14px;font-weight:750}.review-top .mark{white-space:nowrap;font-size:12px;font-weight:900;color:#246e6b}.review-top .mark.bad{color:#a45c34}.review-explanation{font-size:13px;margin-top:5px;color:#527078}.result-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:23px}.links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:19px}.links a{padding:9px 13px;background:#e5f4f2;border-radius:10px;color:#086b7f;font-weight:750;text-decoration:none;font-size:13px}.links a:hover{text-decoration:underline}
+footer{color:#59757f;font-size:12px;text-align:center;line-height:1.6;max-width:720px;margin:25px auto 0}footer a{color:#0a6e7e}.source-note{margin-top:9px}.sr-only{position:absolute;height:1px;width:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+@media(max-width:460px){.wrap{padding:22px 12px 35px}.panel{border-radius:22px}.choices{gap:10px}.choice{min-height:116px;padding:12px 5px}.choice .word{font-size:20px}.choice .symbol{font-size:33px}.choice .hint{font-size:11px}.statement{min-height:auto}.actions{flex-direction:row}}@media(prefers-reduced-motion:reduce){*,*:before{scroll-behavior:auto!important;transition:none!important}}
+@media print{body{background:#fff}.wrap{width:100%;padding:8px}header h1{font-size:31px}.panel{box-shadow:none;border:0;padding:0}#game,.result-actions,.links,.pills{display:none!important}.review-item{break-inside:avoid}.result-hero .score{font-size:51px}footer{margin-top:10px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header>
+<div class="eyebrow">UNIWERSYTET GDAŃSKI · WYDZIAŁ OCEANOGRAFII I GEOGRAFII</div>
+<h1>🌊 FAKT <span class="or">czy</span> MIT?</h1>
+<p class="lead"><strong>Co naprawdę wiesz o tutoringu?</strong> Zmierz się z 10 popularnymi przekonaniami i przekonaj się, co jest prawdą, a co tylko mitem!</p>
+<div class="pills"><span>10 stwierdzeń</span><span>Około 2 minut</span><span>Bez logowania</span><span>Wyjaśnienia odpowiedzi</span></div>
+<div class="wave" aria-hidden="true"></div>
+</header>
+<section class="panel" aria-label="Gra Fakt czy mit?">
+ <div id="game">
+  <div class="topline"><span id="label">ODKRYWAJ TUTORING</span><span id="counter" class="count">1 / 10</span></div>
+  <div id="progress" class="progress" role="progressbar" aria-label="Postęp quizu" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="statement-index" id="statementIndex">STWIERDZENIE 01</div>
+  <h2 class="statement" id="statement" tabindex="-1"></h2>
+  <div class="choices" id="choices" role="group" aria-label="Wybierz Fakt lub Mit">
+   <button type="button" class="choice" id="fact"><span class="symbol" aria-hidden="true">✓</span><span class="word">FAKT</span><span class="hint">To prawda!</span></button>
+   <button type="button" class="choice" id="myth"><span class="symbol" aria-hidden="true">×</span><span class="word">MIT</span><span class="hint">To nieprawda!</span></button>
+  </div>
+  <div class="feedback hidden" id="feedback" role="status" aria-live="polite">
+   <div class="fb-head" id="fbHead"></div>
+   <p id="fbText"></p>
+  </div>
+  <div class="actions">
+   <button type="button" class="back" id="back">← Poprzednie</button>
+   <button type="button" class="btn primary hidden" id="next">Następne pytanie →</button>
+   <span id="helpText" style="font-size:12px;color:#759096">Wybierz jedną odpowiedź.</span>
+  </div>
+ </div>
+ <div id="results" class="hidden">
+  <div class="result-hero">
+   <div id="trophy" class="trophy" aria-hidden="true">🏆</div>
+   <div class="eyebrow">TWÓJ WYNIK</div>
+   <h2 id="resultTitle"></h2>
+   <div class="score"><span id="scoreNum"></span><small>/ 10</small></div>
+   <p class="result-text" id="resultText"></p>
+  </div>
+  <div class="roundup"><h3>Sprawdź, czego się dowiedziałeś(-aś)</h3><div id="review" class="review"></div></div>
+  <div class="result-actions"><button type="button" class="btn primary" id="replay">↻ Zagraj ponownie</button><button type="button" class="btn secondary" id="print">⎙ Zapisz wynik jako PDF</button></div>
+  <div class="links"><a href="./tutormatch.html">🌊 Znajdź swojego tutora</a><a href="./index.html">🧭 Czy tutoring jest dla Ciebie?</a></div>
+ </div>
+</section>
+<footer>
+ Na podstawie oficjalnych informacji WOiG UG: <a target="_blank" rel="noopener noreferrer" href="https://oig.ug.edu.pl/studenci/tutoring">O tutoringu</a> oraz <a target="_blank" rel="noopener noreferrer" href="https://oig.ug.edu.pl/studenci/tutoring/rekrutacja-na-tutoriale">Rekrutacja na tutoriale</a>.
+ <div class="source-note">To gra edukacyjna, a nie oficjalny test uczelni. Nie zbieramy odpowiedzi ani danych osobowych — wszystko działa w Twojej przeglądarce.</div>
+</footer>
+</main>
+<script>
+'use strict';
+const QUESTIONS=[
+ {s:'Tutoring na WOiG to po prostu korepetycje z trudnych przedmiotów.',fact:false,why:'Tutoring to indywidualna współpraca nastawiona na rozwój zainteresowań, umiejętności i samodzielnego myślenia. Nie jest zwykłym powtarzaniem materiału przed egzaminem.'},
+ {s:'Na tutoringu liczą się ciekawość i motywacja, a nie wyłącznie najwyższe oceny.',fact:true,why:'Na stronie WOiG podkreślono, że program nie jest ograniczony tylko do grupy najlepszych studentów. Ważne są aktywność i zainteresowania wykraczające poza program studiów.'},
+ {s:'Żeby skorzystać z tutoringu, trzeba już znać cały swój plan kariery.',fact:false,why:'Tutoring może właśnie pomóc w odkrywaniu własnego potencjału, zainteresowań i kierunku rozwoju. Nie trzeba znać odpowiedzi na wszystkie pytania na starcie.'},
+ {s:'Podczas tutoriali można ćwiczyć pisanie tekstów, prezentowanie wiedzy i dyskusję.',fact:true,why:'WOiG wymienia pisanie tekstów, prezentację wiedzy i dyskusję jako przykładowe umiejętności akademickie rozwijane podczas tutoringu.'},
+ {s:'Dobry tutor powinien dawać studentowi gotowe odpowiedzi zamiast zadawać pytania.',fact:false,why:'Tutor ma inspirować, prowadzić rozmowę, zadawać trafne pytania i wspierać samodzielne formułowanie wniosków, zamiast wyręczać studenta.'},
+ {s:'Student i tutor mogą wspólnie ustalić tematykę oraz harmonogram spotkań.',fact:true,why:'Zasady rekrutacji WOiG przewidują kontakt z wybranym tutorem i indywidualne ustalenie tematu oraz terminów tutorialu.'},
+ {s:'Na WOiG do tutoringu mogą zgłaszać się wyłącznie studenci studiów magisterskich.',fact:false,why:'W informacji rekrutacyjnej WOiG wskazano studentów zarówno I, jak i II stopnia.'},
+ {s:'Tutoring wymaga także pracy studenta między spotkaniami.',fact:true,why:'Program zakłada samodzielne przygotowywanie zadań lub tekstów, które następnie omawia się z tutorem. Student aktywnie współtworzy cały proces.'},
+ {s:'Każdy student WOiG automatycznie dostaje tutora bez zgłaszania się.',fact:false,why:'Udział jest dobrowolny i wiąże się z wyborem tutora oraz procedurą zgłoszenia. Nie jest automatycznie przypisywany wszystkim studentom.'},
+ {s:'Informacja o ukończonym tutorialu może znaleźć się w suplemencie do dyplomu.',fact:true,why:'Aktualna informacja rekrutacyjna WOiG wskazuje, że odbyty tutorial zostanie odnotowany w suplemencie do dyplomu.'}
+];
+let step=0;let answers=new Array(QUESTIONS.length).fill(null);
+const byId=id=>document.getElementById(id);
+const fact=byId('fact'),myth=byId('myth');
+function current(){return QUESTIONS[step]}
+function show(){
+ byId('game').classList.remove('hidden');byId('results').classList.add('hidden');
+ const q=current(),n=step+1;
+ byId('counter').textContent=n+' / '+QUESTIONS.length;
+ byId('statementIndex').textContent='STWIERDZENIE '+String(n).padStart(2,'0');
+ byId('statement').textContent=q.s;
+ byId('progressFill').style.width=(n/QUESTIONS.length*100)+'%';
+ byId('progress').setAttribute('aria-valuenow',n);
+ byId('back').disabled=step===0;
+ [fact,myth].forEach(b=>{b.className='choice';b.disabled=false;b.setAttribute('aria-pressed','false')});
+ const picked=answers[step];
+ if(picked!==null){
+  [fact,myth].forEach((b,i)=>{const value=i===0;b.disabled=true;b.classList.add(value===q.fact?'is-correct':value===picked?'is-wrong':'is-muted');b.setAttribute('aria-pressed',String(value===picked))});
+  const good=picked===q.fact;byId('fbHead').replaceChildren();
+  const ic=document.createElement('span');ic.className='big-icon';ic.textContent=good?'🎉':'💡';
+  const txt=document.createElement('span');txt.textContent=good?'Brawo! Dobra odpowiedź.':`To ${q.fact?'FAKT':'MIT'}!`;
+  byId('fbHead').append(ic,txt);
+  byId('fbText').textContent=q.why;
+  byId('feedback').className='feedback'+(good?'':' wrong');
+  byId('next').textContent=step===QUESTIONS.length-1?'Zobacz swój wynik →':'Następne pytanie →';
+  byId('next').classList.remove('hidden');byId('helpText').classList.add('hidden');
+ }else{byId('feedback').className='feedback hidden';byId('next').classList.add('hidden');byId('helpText').classList.remove('hidden')}
+}
+function pick(value){if(answers[step]!==null)return;answers[step]=value;show()}
+function showResults(){
+ const score=answers.filter((a,i)=>a===QUESTIONS[i].fact).length;
+ byId('game').classList.add('hidden');byId('results').classList.remove('hidden');
+ byId('scoreNum').textContent=score;
+ let title,msg,icon;
+ if(score===10){title='Mistrzyni / Mistrz tutoringu!';msg='Wszystkie mity obalone! Możesz śmiało opowiedzieć znajomym, na czym naprawdę polega tutoring.';icon='🏆'}
+ else if(score>=7){title='Świetnie łapiesz fale!';msg='Masz bardzo dobre rozeznanie. Zobacz wyjaśnienia i sprawdź, co jeszcze Cię zaskoczy.';icon='🌊'}
+ else if(score>=4){title='Odkrywca tutoringu';msg='Kilka zaskoczeń? Właśnie po to jest ta gra! Poznaj fakty i przekonaj się, co tutoring może dać Tobie.';icon='🧭'}
+ else{title='Wiele mitów do odkrycia!';msg='To dobry początek. Przejrzyj wyjaśnienia i zobacz, czym tutoring naprawdę różni się od zwykłych zajęć.';icon='💡'}
+ byId('resultTitle').textContent=title;byId('resultText').textContent=msg;byId('trophy').textContent=icon;
+ const review=byId('review');review.replaceChildren();
+ QUESTIONS.forEach((q,i)=>{
+  const item=document.createElement('div');item.className='review-item';
+  const top=document.createElement('div');top.className='review-top';
+  const statement=document.createElement('span');statement.textContent=(i+1)+'. '+q.s;
+  const mark=document.createElement('span');mark.className='mark'+(answers[i]===q.fact?'':' bad');mark.textContent=(answers[i]===q.fact?'✓ ':'✕ ')+(q.fact?'FAKT':'MIT');
+  top.append(statement,mark);
+  const desc=document.createElement('div');desc.className='review-explanation';desc.textContent=q.why;
+  item.append(top,desc);review.append(item);
+ });
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+fact.addEventListener('click',()=>pick(true));myth.addEventListener('click',()=>pick(false));
+byId('next').addEventListener('click',()=>{if(answers[step]===null)return;if(step<QUESTIONS.length-1){step++;show()}else{showResults()}});
+byId('back').addEventListener('click',()=>{if(step>0){step--;show()}});
+byId('replay').addEventListener('click',()=>{step=0;answers.fill(null);show();window.scrollTo({top:0,behavior:'smooth'})});
+byId('print').addEventListener('click',()=>window.print());
+show();
+</script>
+</body>
+</html>
